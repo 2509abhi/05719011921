@@ -70,13 +70,7 @@ async function fetchProductsFromCompany(
     }));
     return productsWithCompany;
   } catch (error) {
-    console.error(
-      `Failed to fetch products from ${company} - Status Code: ${
-        error.response ? error.response.status : "Unknown"
-      } - Response: ${
-        error.response ? JSON.stringify(error.response.data) : error.message
-      }`
-    );
+    console.error("error occured");
     return [];
   }
 }
@@ -148,7 +142,10 @@ app.get("/categories/:categoryname/products/:productid", (req, res) => {
     res.json(productDetails);
   }
 });
-
+app.get("/", (req, res) => {
+  console.log("hi");
+  res.send("hi");
+});
 app.listen(port, async () => {
   console.log(`http://localhost:${port}/`);
 });

@@ -5,14 +5,14 @@ import { Container, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const ProductDetail = () => {
-  const { productId, categoryname } = useParams();
+  const { productId, catagory } = useParams();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    fetchProductDetails(categoryname, productId).then((response) => {
+    fetchProductDetails(catagory, productId).then((response) => {
       setProduct(response.data);
     });
-  }, [productId, categoryname]);
+  }, [productId, catagory]);
 
   if (!product) {
     return <p>Loading...</p>;
@@ -37,7 +37,7 @@ const ProductDetail = () => {
         </Card.Body>
       </Card>
       <footer className="footer">
-        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        <p>&copy; 2024 Demi Company. All Rights Reserved.</p>
       </footer>
     </Container>
   );

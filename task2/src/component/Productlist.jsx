@@ -147,7 +147,7 @@ const ProductList = () => {
         ))}
       </Row>
       <footer className="footer">
-        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        <p>&copy; 2024 Demi Company. All Rights Reserved.</p>
       </footer>
     </Container>
   );
